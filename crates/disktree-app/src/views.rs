@@ -3333,6 +3333,10 @@ fn help_overlay(app: &Disktree, cx: &gpui_kit::App) -> Div {
                 )
                 .child(
                     div()
+                        // A definite width is what lets a long label wrap
+                        // instead of spilling past the card.
+                        .flex_1()
+                        .min_w_0()
                         .text_size(text::BODY)
                         .text_color(theme.foreground)
                         .child(label.to_string()),
